@@ -3,6 +3,9 @@ name: Build and Publish nuget package
 on:
   workflow_dispatch:
 
+env:
+  BaseVersion: 1.0
+
 jobs:
   test:
     runs-on: ubuntu-latest
@@ -14,3 +17,13 @@ jobs:
 
     - name: Run Tests
       run: dotnet test --configuration Release
+
+    - name: Build nuget package
+      run: dotnet pack --configuration Release -o nuget /p:Version=${{ env.BaseVersion }}.${{ github.run_number }}
+
+    - name: Store artifact
+      uses: actions/upload-artifact@v3
+      with:
+        name: package
+        if-no-files-found: error
+        path: /nuget/TestableHttp.*.nupkg
