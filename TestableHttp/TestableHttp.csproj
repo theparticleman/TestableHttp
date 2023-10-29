@@ -13,6 +13,8 @@
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <PackageProjectUrl>https://github.com/theparticleman/TestableHttp</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/theparticleman/TestableHttp.git</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
     <PackageTags>http;testing</PackageTags>
   </PropertyGroup>
 
