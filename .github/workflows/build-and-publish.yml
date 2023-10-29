@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
 
 env:
-  BaseVersion: 1.0
+  BaseVersion: "1.0"
 
 jobs:
   test:
@@ -26,4 +26,4 @@ jobs:
       with:
         name: package
         if-no-files-found: error
-        path: /nuget/TestableHttp.*.nupkg
+        path: nuget/TestableHttp.*.nupkg
