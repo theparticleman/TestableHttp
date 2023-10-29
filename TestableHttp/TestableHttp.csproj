@@ -11,12 +11,14 @@
     <LangVersion>7.0</LangVersion>
     <Description>A library for making testable HTTP requests.</Description>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
     <PackageProjectUrl>https://github.com/theparticleman/TestableHttp</PackageProjectUrl>
     <PackageTags>http;testing</PackageTags>
   </PropertyGroup>
 
   <ItemGroup>
     <None Include="../LICENSE" Pack="true" PackagePath="" />
+    <None Include="../README.md" Pack="true" PackagePath="" />
   </ItemGroup>
 
   <ItemGroup>
