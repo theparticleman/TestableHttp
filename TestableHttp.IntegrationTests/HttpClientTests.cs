@@ -206,7 +206,7 @@ namespace TestableHttp.IntegrationTests
 
             Assert.That(response.StatusCode, Is.EqualTo(expected: 301));
             Assert.That(response.Body, Is.Not.Empty);
-            Assert.That(response.Headers.GetValue("location"), Is.EqualTo("https://jigsaw.w3.org/HTTP/300/Overview.html").IgnoreCase);
+            Assert.That(response.Headers.GetValue("location"), Is.EqualTo("http://jigsaw.w3.org/HTTP/300/Overview.html").IgnoreCase);
         }
 
         [Test]
@@ -278,7 +278,7 @@ namespace TestableHttp.IntegrationTests
         [Test]
         public void WhenTemporaryRedirectShouldBeFollowed()
         {
-            var request = new HttpRequest { Url = "https://httpbingo.org/redirect-to?url=https://example.com" };
+            var request = new HttpRequest { Url = "https://httpbin.org/redirect-to?url=https://example.com&status_code=302" };
             client = new HttpClient(new HttpClientOptions { AllowAutoRedirect = true });
 
             var response = client.Execute(request);
@@ -292,7 +292,7 @@ namespace TestableHttp.IntegrationTests
         [Test]
         public async Task WhenTemporaryRedirectShouldNotBeFollowed()
         {
-            var request = new HttpRequest { Url = "https://httpbingo.org/redirect-to?url=https://example.com" };
+            var request = new HttpRequest { Url = "https://httpbin.org/redirect-to?url=https://example.com&status_code=302" };
             client = new HttpClient(new HttpClientOptions { AllowAutoRedirect = false });
 
             var response = await client.ExecuteAsync(request);
